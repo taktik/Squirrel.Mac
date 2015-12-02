@@ -262,6 +262,13 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 		connect];
 }
 
+- (RACSignal *)forceCheck {
+	return [[self.checkForUpdatesCommand execute:RACUnit.defaultUnit] catch:^(NSError *error) {
+				NSLog(@"Error checking for updates: %@", error);
+				return [RACSignal empty];
+			}];
+}
+
 - (RACSignal *)updateFromJSONData:(NSData *)data {
 	NSParameterAssert(data != nil);
 

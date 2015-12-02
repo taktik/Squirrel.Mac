@@ -121,6 +121,9 @@ extern NSString * const SQRLUpdaterJSONObjectErrorKey;
 // checking.
 - (RACDisposable *)startAutomaticChecksWithInterval:(NSTimeInterval)interval;
 
+// Executes `checkForUpdatesCommand` (if enabled) once.
+- (RACSignal *)forceCheck;
+
 // Terminates the running application to install any available update, then
 // automatically relaunches the app after updating.
 //
