@@ -489,7 +489,13 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 			return [[enumerator.rac_sequence.signal
 				filter:^(NSURL *enumeratedURL) {
 					NSString *name = enumeratedURL.lastPathComponent;
-					return [name hasPrefix:SQRLUpdaterUniqueTemporaryDirectoryPrefix];
+					
+					if (![name hasPrefix:SQRLUpdaterUniqueTemporaryDirectoryPrefix]) { return NO; }
+					
+					NSString * updateDirVersion = [NSBundle bundleWithURL:[enumeratedURL URLByAppendingPathComponent:[[NSBundle mainBundle] bundlePath].lastPathComponent]].sqrl_bundleVersion;
+					NSString * thisVersion = [NSBundle mainBundle].sqrl_bundleVersion;
+					
+					return (BOOL) ([updateDirVersion compare:thisVersion] != NSOrderedDescending);
 				}]
 				doNext:^(NSURL *directoryURL) {
 					NSError *error = nil;
