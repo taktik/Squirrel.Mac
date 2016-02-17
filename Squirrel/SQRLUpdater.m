@@ -495,10 +495,13 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 					NSString * updateDirVersion = [NSBundle bundleWithURL:[enumeratedURL URLByAppendingPathComponent:[[NSBundle mainBundle] bundlePath].lastPathComponent]].sqrl_bundleVersion;
 					NSString * thisVersion = [NSBundle mainBundle].sqrl_bundleVersion;
 					
+					NSLog(@"Comparing this version %@ to update dir version %@", thisVersion, updateDirVersion);
+		
 					return (BOOL) ([updateDirVersion compare:thisVersion] != NSOrderedDescending);
 				}]
 				doNext:^(NSURL *directoryURL) {
 					NSError *error = nil;
+					NSLog(@"Remove old update directory at %@: %@", directoryURL, error.sqrl_verboseDescription);
 					if (![manager removeItemAtURL:directoryURL error:&error]) {
 						NSLog(@"Error removing old update directory at %@: %@", directoryURL, error.sqrl_verboseDescription);
 					}
