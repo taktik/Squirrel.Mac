@@ -52,6 +52,8 @@
 		defer:^{
 			NSError *error = nil;
 			NSURL *folderURL = [NSFileManager.defaultManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+			NSLog(@"ShipIt DM appSupURL called with fURL = %@",folderURL);
+
 			if (folderURL == nil) {
 				return [RACSignal error:error];
 			}
