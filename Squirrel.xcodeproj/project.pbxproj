@@ -1083,6 +1083,11 @@
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = GitHub;
+				TargetAttributes = {
+					D0C22BD6179CC00E00158214 = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = D0C22BD1179CC00E00158214 /* Build configuration list for PBXProject "Squirrel" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1572,6 +1577,7 @@
 				);
 				INFOPLIST_FILE = "Squirrel/Squirrel-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.${PRODUCT_NAME:rfc1034identifier}";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1590,6 +1596,7 @@
 				);
 				INFOPLIST_FILE = "Squirrel/Squirrel-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.${PRODUCT_NAME:rfc1034identifier}";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1656,6 +1663,7 @@
 				);
 				INFOPLIST_FILE = "Squirrel/Squirrel-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.${PRODUCT_NAME:rfc1034identifier}";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Profile;
@@ -1703,6 +1711,7 @@
 				);
 				INFOPLIST_FILE = "Squirrel/Squirrel-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.${PRODUCT_NAME:rfc1034identifier}";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Test;
