@@ -15,7 +15,7 @@
 	url = https://github.com/jspahrsummers/xcconfigs.git
 [submodule "Carthage.checkout/Mantle"]
 	path = Carthage/Checkouts/Mantle
-	url = https://github.com/Mantle/Mantle.git
+	url = https://github.com/taktik/Mantle.git
 [submodule "Carthage/Checkouts/Nimble"]
 	url = https://github.com/Quick/Nimble.git
 [submodule "Carthage/Checkouts/Quick"]
