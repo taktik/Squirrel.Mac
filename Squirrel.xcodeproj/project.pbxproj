@@ -64,8 +64,8 @@
 		D08D4E1917B451500012B22D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D08D4E1717B451500012B22D /* Credits.rtf */; };
 		D08D4E1C17B451500012B22D /* TestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08D4E1B17B451500012B22D /* TestAppDelegate.m */; };
 		D08D4E2117B451500012B22D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08D4E2017B451500012B22D /* Images.xcassets */; };
-		D08D4E4717B451E50012B22D /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* Squirrel.framework */; };
-		D08D4E4917B451F20012B22D /* Squirrel.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* Squirrel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D08D4E4717B451E50012B22D /* .framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* .framework */; };
+		D08D4E4917B451F20012B22D /* .framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* .framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D08D4E4A17B451FD0012B22D /* TestApplication.app in Resources */ = {isa = PBXBuildFile; fileRef = D08D4E0C17B451500012B22D /* TestApplication.app */; };
 		D093682417FF732200BA0EAE /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D014ABB917B97403007D79D0 /* ServiceManagement.framework */; };
 		D0964B3817F2E01500D88BF7 /* SQRLDownloadedUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = D0964B3617F2E01500D88BF7 /* SQRLDownloadedUpdate.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -140,7 +140,7 @@
 		D0B1DDCE17B487FB0059C355 /* unused-helper in Copy Executables */ = {isa = PBXBuildFile; fileRef = D0B1DDCB17B487D90059C355 /* unused-helper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D0C22BDB179CC00E00158214 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BDA179CC00E00158214 /* Cocoa.framework */; };
 		D0C22BF2179CC00E00158214 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BDA179CC00E00158214 /* Cocoa.framework */; };
-		D0C22BF5179CC00E00158214 /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* Squirrel.framework */; };
+		D0C22BF5179CC00E00158214 /* .framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C22BD7179CC00E00158214 /* .framework */; };
 		D0C22C4C179CC15100158214 /* SQRLUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = D0C22C4A179CC15100158214 /* SQRLUpdater.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0C22C4D179CC15100158214 /* SQRLUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C22C4B179CC15100158214 /* SQRLUpdater.m */; };
 		D0C22C50179CC18C00158214 /* SQRLUpdaterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C22C4F179CC18C00158214 /* SQRLUpdaterSpec.m */; };
@@ -242,7 +242,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D08D4E4917B451F20012B22D /* Squirrel.framework in Copy Frameworks */,
+				D08D4E4917B451F20012B22D /* .framework in Copy Frameworks */,
 				D4C4909E18E46E1000786EFE /* ReactiveCocoa.framework in Copy Frameworks */,
 				D4C4909F18E46E1000786EFE /* Mantle.framework in Copy Frameworks */,
 			);
@@ -401,7 +401,7 @@
 		D0AFE3921A00297500C6048F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFE3941A0029A700C6048F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B1DDCB17B487D90059C355 /* unused-helper */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "unused-helper"; sourceTree = "<group>"; };
-		D0C22BD7179CC00E00158214 /* Squirrel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Squirrel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C22BD7179CC00E00158214 /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C22BDA179CC00E00158214 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0C22BE2179CC00E00158214 /* Squirrel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Squirrel-Info.plist"; sourceTree = "<group>"; };
 		D0C22BE7179CC00E00158214 /* Squirrel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Squirrel.h; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08D4E4717B451E50012B22D /* Squirrel.framework in Frameworks */,
+				D08D4E4717B451E50012B22D /* .framework in Frameworks */,
 				D08D4E0D17B451500012B22D /* Cocoa.framework in Frameworks */,
 				D45F1A9418E47055005CE515 /* ReactiveCocoa.framework in Frameworks */,
 				D45F1A9518E47055005CE515 /* Mantle.framework in Frameworks */,
@@ -500,7 +500,7 @@
 				D0C22BF2179CC00E00158214 /* Cocoa.framework in Frameworks */,
 				D0AFE3951A0029A700C6048F /* Nimble.framework in Frameworks */,
 				D0A6D2BC17B9FA9E00B2C3DF /* Security.framework in Frameworks */,
-				D0C22BF5179CC00E00158214 /* Squirrel.framework in Frameworks */,
+				D0C22BF5179CC00E00158214 /* .framework in Frameworks */,
 				D45F1A9218E46F2E005CE515 /* ReactiveCocoa.framework in Frameworks */,
 				D45F1A9318E46F2E005CE515 /* Mantle.framework in Frameworks */,
 			);
@@ -779,7 +779,7 @@
 		D0C22BD8179CC00E00158214 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0C22BD7179CC00E00158214 /* Squirrel.framework */,
+				D0C22BD7179CC00E00158214 /* .framework */,
 				D0C22BEF179CC00E00158214 /* SquirrelTests.xctest */,
 				D08D4E0C17B451500012B22D /* TestApplication.app */,
 				D014AC0117B97885007D79D0 /* ShipIt */,
@@ -1051,7 +1051,7 @@
 			);
 			name = Squirrel;
 			productName = Squirrel;
-			productReference = D0C22BD7179CC00E00158214 /* Squirrel.framework */;
+			productReference = D0C22BD7179CC00E00158214 /* .framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D0C22BEE179CC00E00158214 /* SquirrelTests */ = {
