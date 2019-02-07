@@ -341,8 +341,9 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 			[zipDownloadRequest setTimeoutInterval:1200];
 			[zipDownloadRequest setValue:@"application/zip" forHTTPHeaderField:@"Accept"];
 
+			NSString * _Nonnull lastPathComponent = (NSString * _Nonnull) zipDownloadURL.lastPathComponent;
 			return [[[[NSURLConnection
-					   rac_startAsynchronousRequest:zipDownloadRequest into:[downloadDirectory URLByAppendingPathComponent:zipDownloadURL.lastPathComponent]]
+					   rac_startAsynchronousRequest:zipDownloadRequest into:[downloadDirectory URLByAppendingPathComponent:lastPathComponent]]
 				reduceEach:^(NSURLResponse *response, NSURL *destination) {
 					if ([response isKindOfClass:NSHTTPURLResponse.class]) {
 						NSHTTPURLResponse *httpResponse = (id)response;
@@ -492,7 +493,7 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 					
 					if (![name hasPrefix:SQRLUpdaterUniqueTemporaryDirectoryPrefix]) { return NO; }
 					
-					NSString * updateDirVersion = [NSBundle bundleWithURL:[enumeratedURL URLByAppendingPathComponent:[[NSBundle mainBundle] bundlePath].lastPathComponent]].sqrl_bundleVersion;
+					NSString * updateDirVersion = [NSBundle bundleWithURL:(NSURL * _Nonnull)[enumeratedURL URLByAppendingPathComponent:(NSString * _Nonnull)[[NSBundle mainBundle] bundlePath].lastPathComponent]].sqrl_bundleVersion;
 					NSString * thisVersion = [NSBundle mainBundle].sqrl_bundleVersion;
 					
 					NSLog(@"Comparing this version %@ to update dir version %@", thisVersion, updateDirVersion);
@@ -536,7 +537,7 @@ static NSString * const SQRLUpdaterUniqueTemporaryDirectoryPrefix = @"update.";
 	return [[[[RACSignal
 		defer:^{
 			NSRunningApplication *currentApplication = NSRunningApplication.currentApplication;
-			NSBundle *appBundle = [NSBundle bundleWithURL:currentApplication.bundleURL];
+			NSBundle *appBundle = [NSBundle bundleWithURL:(NSURL * _Nonnull) currentApplication.bundleURL];
 			// Only use the update bundle's name if the user hasn't renamed the
 			// app themselves.
 			BOOL useUpdateBundleName = [appBundle.sqrl_executableName isEqual:currentApplication.bundleURL.lastPathComponent.stringByDeletingPathExtension];

@@ -32,7 +32,7 @@
 	self.response = response;
 
 	if (response.suggestedFilename) {
-		self.fileName = [self.fileName.stringByDeletingLastPathComponent stringByAppendingPathComponent:response.suggestedFilename];
+		self.fileName = [self.fileName.stringByDeletingLastPathComponent stringByAppendingPathComponent:(NSString* _Nonnull)response.suggestedFilename];
 	}
 
 	[[NSFileManager defaultManager] createFileAtPath:self.fileName contents:nil attributes:nil];

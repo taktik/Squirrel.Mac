@@ -94,7 +94,7 @@ const NSInteger SQRLCodeSignatureErrorCouldNotCreateStaticCode = -2;
 	NSParameterAssert(requirement != NULL);
 
 	return [self initWithDictionary:@{
-		@keypath(self.requirement): (__bridge id)requirement
+		((NSString* _Nonnull) @keypath(self.requirement)): (__bridge id)requirement
 	} error:NULL];
 }
 
@@ -151,7 +151,7 @@ const NSInteger SQRLCodeSignatureErrorCouldNotCreateStaticCode = -2;
 
 + (NSDictionary *)encodingBehaviorsByPropertyKey {
 	return [super.encodingBehaviorsByPropertyKey mtl_dictionaryByAddingEntriesFromDictionary:@{
-		@keypath(SQRLCodeSignature.new, requirement): @(MTLModelEncodingBehaviorExcluded)
+		(NSString* _Nonnull) @keypath(SQRLCodeSignature.new, requirement): @(MTLModelEncodingBehaviorExcluded)
 	}];
 }
 
@@ -159,11 +159,11 @@ const NSInteger SQRLCodeSignatureErrorCouldNotCreateStaticCode = -2;
 
 - (void)encodeWithCoder:(NSCoder *)coder {
 	[super encodeWithCoder:coder];
-	[coder encodeObject:self.requirementData forKey:@keypath(self.requirement)];
+	[coder encodeObject:self.requirementData forKey:(NSString* _Nonnull) @keypath(self.requirement)];
 }
 
 - (id)decodeRequirementWithCoder:(NSCoder *)coder modelVersion:(NSUInteger)version {
-	NSData *data = [coder decodeObjectForKey:@keypath(self.requirement)];
+	NSData *data = [coder decodeObjectForKey:(NSString* _Nonnull) @keypath(self.requirement)];
 	if (data == nil) return nil;
 
 	SecRequirementRef requirement = NULL;

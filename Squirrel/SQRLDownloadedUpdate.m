@@ -32,8 +32,8 @@
 	NSParameterAssert(bundle.bundleURL != nil);
 
 	return [self initWithDictionary:@{
-		@keypath(self.update): update,
-		@keypath(self.bundleURL): bundle.bundleURL
+		(NSString* _Nonnull) @keypath(self.update): update,
+		(NSString* _Nonnull) @keypath(self.bundleURL): bundle.bundleURL
 	} error:NULL];
 }
 
@@ -41,7 +41,7 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
-		@keypath(SQRLDownloadedUpdate.new, bundleURL): NSNull.null
+		(NSString* _Nonnull) @keypath(SQRLDownloadedUpdate.new, bundleURL): NSNull.null
 	};
 }
 

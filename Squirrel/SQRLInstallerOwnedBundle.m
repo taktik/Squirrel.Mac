@@ -14,9 +14,9 @@
 
 - (instancetype)initWithOriginalURL:(NSURL *)originalURL temporaryURL:(NSURL *)temporaryURL codeSignature:(SQRLCodeSignature *)codeSignature {
 	return [self initWithDictionary:@{
-		@keypath(self.originalURL): originalURL,
-		@keypath(self.temporaryURL): temporaryURL,
-		@keypath(self.codeSignature): codeSignature,
+		(NSString* _Nonnull) @keypath(self.originalURL): originalURL,
+		(NSString* _Nonnull) @keypath(self.temporaryURL): temporaryURL,
+		(NSString* _Nonnull) @keypath(self.codeSignature): codeSignature,
 	} error:NULL];
 }
 

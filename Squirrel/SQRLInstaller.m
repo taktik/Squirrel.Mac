@@ -249,7 +249,7 @@ NSString * const SQRLInstallerOwnedBundleKey = @"SQRLInstallerOwnedBundle";
 			[self codeSignatureForBundleAtURL:request.targetBundleURL],
 		] reduce:^(NSURL *directoryURL, SQRLCodeSignature *codeSignature) {
 			NSURL *targetBundleURL = request.targetBundleURL;
-			NSURL *newBundleURL = [directoryURL URLByAppendingPathComponent:targetBundleURL.lastPathComponent];
+			NSURL *newBundleURL = [directoryURL URLByAppendingPathComponent:(NSString* _Nonnull)targetBundleURL.lastPathComponent];
 
 			return [[SQRLInstallerOwnedBundle alloc] initWithOriginalURL:request.targetBundleURL temporaryURL:newBundleURL codeSignature:codeSignature];
 		}]
@@ -364,7 +364,7 @@ NSString * const SQRLInstallerOwnedBundleKey = @"SQRLInstallerOwnedBundle";
 	NSParameterAssert(bundleURL != nil);
 	NSParameterAssert(directoryURL != nil);
 
-	NSURL *newBundleURL = [directoryURL URLByAppendingPathComponent:bundleURL.lastPathComponent];
+	NSURL *newBundleURL = [directoryURL URLByAppendingPathComponent:(NSString* _Nonnull)bundleURL.lastPathComponent];
 
 	return [[[RACSignal
 		defer:^{
@@ -457,7 +457,7 @@ NSString * const SQRLInstallerOwnedBundleKey = @"SQRLInstallerOwnedBundle";
 		NSURL *newTargetURL = [targetURL.URLByDeletingLastPathComponent URLByAppendingPathComponent:newAppName];
 
 		// If there's already something there then don't rename to it.
-		if ([NSFileManager.defaultManager fileExistsAtPath:newTargetURL.path]) {
+		if ([NSFileManager.defaultManager fileExistsAtPath:(NSString* _Nonnull)newTargetURL.path]) {
 			return [RACSignal return:targetURL];
 		}
 

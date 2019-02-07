@@ -61,10 +61,10 @@ NSString * const SQRLUpdateJSONPublicationDateKey = @"pub_date";
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
 	return @{
-		@keypath(SQRLUpdate.new, releaseNotes): @"notes",
-		@keypath(SQRLUpdate.new, releaseName): @"name",
-		@keypath(SQRLUpdate.new, releaseDate): @"pub_date",
-		@keypath(SQRLUpdate.new, updateURL): @"url",
+		(NSString* _Nonnull) @keypath(SQRLUpdate.new, releaseNotes): @"notes",
+		(NSString* _Nonnull) @keypath(SQRLUpdate.new, releaseName): @"name",
+		(NSString* _Nonnull) @keypath(SQRLUpdate.new, releaseDate): @"pub_date",
+		(NSString* _Nonnull) @keypath(SQRLUpdate.new, updateURL): @"url",
 	};
 }
 

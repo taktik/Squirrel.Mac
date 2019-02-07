@@ -38,27 +38,27 @@ const NSInteger SQRLShipItLauncherErrorCouldNotStartService = 1;
 			NSAssert(squirrelBundle != nil, @"Could not open Squirrel.framework bundle");
 
 			NSMutableDictionary *jobDict = [NSMutableDictionary dictionary];
-			jobDict[@(LAUNCH_JOBKEY_LABEL)] = jobLabel;
-			jobDict[@(LAUNCH_JOBKEY_NICE)] = @(-1);
-			jobDict[@(LAUNCH_JOBKEY_ENABLETRANSACTIONS)] = @NO;
-			jobDict[@(LAUNCH_JOBKEY_THROTTLEINTERVAL)] = @2;
-			jobDict[@(LAUNCH_JOBKEY_KEEPALIVE)] = @{
-				@(LAUNCH_JOBKEY_KEEPALIVE_SUCCESSFULEXIT): @NO
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_LABEL)] = jobLabel;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_NICE)] = @(-1);
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_ENABLETRANSACTIONS)] = @NO;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_THROTTLEINTERVAL)] = @2;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_KEEPALIVE)] = @{
+				(NSString* _Nonnull) @(LAUNCH_JOBKEY_KEEPALIVE_SUCCESSFULEXIT): @NO
 			};
 
-			jobDict[@(LAUNCH_JOBKEY_MACHSERVICES)] = @{
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_MACHSERVICES)] = @{
 				jobLabel: @YES
 			};
 
 			NSMutableArray *arguments = [[NSMutableArray alloc] init];
-			[arguments addObject:[squirrelBundle URLForResource:@"ShipIt" withExtension:nil].path];
+			[arguments addObject:(NSString* _Nonnull)[squirrelBundle URLForResource:@"ShipIt" withExtension:nil].path];
 
 			// Pass in the service name so ShipIt knows how to broadcast itself.
 			[arguments addObject:jobLabel];
 
-			jobDict[@(LAUNCH_JOBKEY_PROGRAMARGUMENTS)] = arguments;
-			jobDict[@(LAUNCH_JOBKEY_STANDARDOUTPATH)] = [appSupportURL URLByAppendingPathComponent:@"ShipIt_stdout.log"].path;
-			jobDict[@(LAUNCH_JOBKEY_STANDARDERRORPATH)] = [appSupportURL URLByAppendingPathComponent:@"ShipIt_stderr.log"].path;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_PROGRAMARGUMENTS)] = arguments;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_STANDARDOUTPATH)] = [appSupportURL URLByAppendingPathComponent:@"ShipIt_stdout.log"].path;
+			jobDict[(NSString* _Nonnull) @(LAUNCH_JOBKEY_STANDARDERRORPATH)] = [appSupportURL URLByAppendingPathComponent:@"ShipIt_stderr.log"].path;
 
 			return jobDict;
 		}]

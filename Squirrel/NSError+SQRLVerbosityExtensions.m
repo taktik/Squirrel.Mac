@@ -24,7 +24,7 @@
 		[userInfo removeObjectForKey:NSLocalizedRecoverySuggestionErrorKey];
 	}
 
-	if (self.localizedFailureReason != nil && [self.localizedDescription rangeOfString:self.localizedFailureReason].location == NSNotFound) {
+	if (self.localizedFailureReason != nil && [self.localizedDescription rangeOfString:(NSString* _Nonnull) self.localizedFailureReason].location == NSNotFound) {
 		[description appendFormat:@", failureReason: \"%@\"", self.localizedFailureReason];
 		[userInfo removeObjectForKey:NSLocalizedFailureReasonErrorKey];
 	}

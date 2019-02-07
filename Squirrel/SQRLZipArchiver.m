@@ -102,10 +102,10 @@ const NSInteger SQRLZipArchiverShellTaskFailed = 1;
 	NSParameterAssert([directoryURL isFileURL]);
 
 	SQRLZipArchiver *archiver = [[self alloc] init];
-	archiver.dittoTask.currentDirectoryPath = directoryURL.URLByDeletingLastPathComponent.path;
+	archiver.dittoTask.currentDirectoryPath = (NSString* _Nonnull)directoryURL.URLByDeletingLastPathComponent.path;
 
 	return [[archiver
-		launchWithArguments:@[ @"-ck", @"--keepParent", directoryURL.lastPathComponent, zipArchiveURL.path ]]
+		launchWithArguments:@[ @"-ck", @"--keepParent", (NSString* _Nonnull)directoryURL.lastPathComponent, (NSString* _Nonnull)zipArchiveURL.path ]]
 		setNameWithFormat:@"+createZipArchiveAtURL: %@ fromDirectoryAtURL: %@", zipArchiveURL, directoryURL];
 }
 
@@ -117,7 +117,7 @@ const NSInteger SQRLZipArchiverShellTaskFailed = 1;
 
 	SQRLZipArchiver *archiver = [[self alloc] init];
 	return [[archiver
-		launchWithArguments:@[ @"-xk", zipArchiveURL.path, directoryURL.path ]]
+		launchWithArguments:@[ @"-xk", (NSString* _Nonnull)zipArchiveURL.path, (NSString* _Nonnull)directoryURL.path ]]
 		setNameWithFormat:@"+unzipArchiveAtURL: %@ intoDirectoryAtURL: %@", zipArchiveURL, directoryURL];
 }
 
